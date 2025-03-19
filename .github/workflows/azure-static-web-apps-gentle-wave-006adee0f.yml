@@ -38,7 +38,7 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: 'micro-frontend-app/container/package-lock.json'
+          cache-dependency-path: 'micro-frontend-app/todo-list-app/package-lock.json'
 
       - name: Install Dependencies
         run: |
