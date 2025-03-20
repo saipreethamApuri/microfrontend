@@ -31,9 +31,9 @@ module.exports = {
       name: 'container',
       remotes: {
         userProfile: 'userProfile@https://blue-sand-08c64b30f.6.azurestaticapps.net/remoteEntry.js',
-        todoList: 'todoList@http://localhost:3002/remoteEntry.js',
+        todoList: 'todoList@https://nice-flower-029239d0f.6.azurestaticapps.net/remoteEntry.js',
         notificationCenter: 'notificationCenter@https://ambitious-forest-0eebd9d0f.6.azurestaticapps.net/remoteEntry.js',
-        components: 'sharedComponents@http://localhost:3005/remoteEntry.js',
+        components: 'sharedComponents@https://purple-mushroom-0b054790f.6.azurestaticapps.net/remoteEntry.js',
       },
       shared: {
         react: { singleton: true, requiredVersion: false },
