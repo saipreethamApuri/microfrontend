@@ -60,7 +60,8 @@ jobs:
           action: "upload"
           app_location: "micro-frontend-app/container"
           output_location: "dist"
-          skip_app_build: true
+          app_build_command: "npm run build"
+          skip_app_build: false
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
