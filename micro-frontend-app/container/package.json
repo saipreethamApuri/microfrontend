@@ -1,10 +1,9 @@
 {
-  "name": "container-app",
+  "name": "container",
   "version": "1.0.0",
-  "main": "src/index.js",
   "scripts": {
-    "start": "webpack serve --config webpack.config.js",
-    "build": "webpack --config webpack.config.js"
+    "start": "webpack serve",
+    "build": "webpack --mode production"
   },
   "dependencies": {
     "react": "^18.0.0",
@@ -13,12 +12,12 @@
     "styled-components": "^5.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.0",
     "webpack": "^5.0.0",
     "webpack-cli": "^4.0.0",
     "webpack-dev-server": "^4.0.0",
-    "webpack/lib/container/ModuleFederationPlugin": "^5.0.0"
+    "html-webpack-plugin": "^5.0.0",
+    "babel-loader": "^8.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-react": "^7.0.0"
   }
 } 
