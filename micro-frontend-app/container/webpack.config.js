@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
+const path = require('path');
 
 module.exports = {
   entry: './src/index.js',
@@ -13,6 +14,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      'remote-artifacts': path.resolve(__dirname, 'remote-artifacts'),
+    }
   },
   module: {
     rules: [
@@ -45,4 +49,4 @@ module.exports = {
       template: './public/index.html',
     }),
   ],
-} 
+}

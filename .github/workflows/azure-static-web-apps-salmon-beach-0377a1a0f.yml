@@ -3,14 +3,31 @@ name: Azure Static Web Apps CI/CD
 on:
   push:
     branches:
-      - main
+      - path-based-approach
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+  workflow_run:
+    workflows: ["Remote Workflow Name"]
+    types:
+      - completed
 
 jobs:
+  download_artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifacts from other repository
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          github_token: ${{ secrets.PAT_TOKEN }}
+          workflow: azure-static-web-apps-blue-sand-08c64b30f.yml
+          repo: saipreethamApuri/profiles
+          name: remote-artifact-name
+          path: user-profile-app/dist
+
   build_and_deploy_job:
+    needs: download_artifacts
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
@@ -47,7 +64,7 @@ jobs:
           cd micro-frontend-app/container
           npm install
 
-      - name: Build
+      - name: Build With Remote Artifacts
         run: |
           cd micro-frontend-app/container
           npm run build
