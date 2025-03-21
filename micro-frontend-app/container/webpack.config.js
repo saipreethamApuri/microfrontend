@@ -30,9 +30,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'container',
       remotes: {
-        userProfile: 'userProfile@https://blue-sand-08c64b30f.6.azurestaticapps.net/remoteEntry.js',
+        userProfile: 'userProfile@https://azure.paxafe.com/profile/remoteEntry.js',
         todoList: 'todoList@https://nice-flower-029239d0f.6.azurestaticapps.net/remoteEntry.js',
-        notificationCenter: 'notificationCenter@https://ambitious-forest-0eebd9d0f.6.azurestaticapps.net/remoteEntry.js',
+        notificationCenter: 'notificationCenter@https://azure.paxafe.com/notifications/remoteEntry.js',
         components: 'sharedComponents@https://purple-mushroom-0b054790f.6.azurestaticapps.net/remoteEntry.js',
       },
       shared: {
