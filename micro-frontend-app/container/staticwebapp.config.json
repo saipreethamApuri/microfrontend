@@ -1,17 +1,27 @@
 {
   "navigationFallback": {
     "rewrite": "/index.html",
-    "exclude": ["/images/*.{png,jpg,gif}", "/css/*", "/js/*"]
+    "exclude": [
+      "/remoteEntry.js",
+      "/profile/remoteEntry.js",
+      "/notifications/remoteEntry.js",
+      "/images/*.{png,jpg,gif}",
+      "/css/*",
+      "/js/*"
+    ]
   },
   "routes": [
     {
-      "route": "/*",
-      "allowedOrigins": ["*"],
-      "headers": {
-        "Access-Control-Allow-Origin": "*"
-      },
-      "serve": "/index.html",
-      "statusCode": 200
+      "route": "/remoteEntry.js",
+      "mimeType": "application/javascript"
+    },
+    {
+      "route": "/profile/remoteEntry.js",
+      "mimeType": "application/javascript"
+    },
+    {
+      "route": "/notifications/remoteEntry.js",
+      "mimeType": "application/javascript"
     }
   ],
   "responseOverrides": {
@@ -25,6 +35,7 @@
     "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS"
   },
   "mimeTypes": {
-    ".json": "text/json"
+    ".json": "application/json",
+    ".js": "application/javascript"
   }
-} 
+}
