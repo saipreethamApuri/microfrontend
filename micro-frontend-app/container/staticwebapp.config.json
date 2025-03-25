@@ -26,6 +26,10 @@
     {
       "route": "/todos/remoteEntry.js",
       "mimeType": "application/javascript"
+    },    
+    {
+      "route": "/*.js",
+      "mimeType": "application/javascript"
     }
   ],
   "responseOverrides": {
