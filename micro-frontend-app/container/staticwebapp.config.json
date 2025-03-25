@@ -22,6 +22,10 @@
     {
       "route": "/notifications/remoteEntry.js",
       "mimeType": "application/javascript"
+    },
+    {
+      "route": "/todos/remoteEntry.js",
+      "mimeType": "application/javascript"
     }
   ],
   "responseOverrides": {
